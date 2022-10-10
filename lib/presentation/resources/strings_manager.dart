@@ -14,4 +14,11 @@ class AppStrings {
   static const onBoardingSubTitle4 =
       'Tut app is an awesome f;utter application using clean architecture #4';
   static const skip = 'Skip';
+  static const userName = 'Username';
+  static const userNameError = 'Please enter your userName';
+  static const password = 'Password';
+  static const passwordError = 'Please enter your password';
+  static const login = 'Login';
+  static const forgetPassword = 'Forget Password';
+  static const register = 'Not a member ? Sign up';
 }

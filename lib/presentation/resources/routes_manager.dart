@@ -1,5 +1,5 @@
 import 'package:clean/presentation/forgot_password/forgot_password_screen.dart';
-import 'package:clean/presentation/login/login_screen.dart';
+import 'package:clean/presentation/login/view/login_screen.dart';
 import 'package:clean/presentation/main_screen/main_screen.dart';
 import 'package:clean/presentation/onboarding/view/onboarding_screen.dart';
 import 'package:clean/presentation/register/register_screen.dart';
