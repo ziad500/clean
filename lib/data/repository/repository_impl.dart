@@ -9,7 +9,6 @@ import 'package:clean/data/network/network_info.dart';
 import 'package:clean/data/network/requests.dart';
 import 'package:clean/domain/model/models.dart';
 import 'package:clean/domain/repository/repository.dart';
-import 'package:dio/dio.dart';
 
 class RepositoryImpl implements Repository {
   final RemoteDataSource _remoteDataSource;
