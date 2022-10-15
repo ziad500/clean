@@ -2,13 +2,19 @@
 import 'package:clean/presentation/resources/language_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-const String prefKeyLanguage = "prefKeyLanguage";
+const String prefKeyLanguage = "prefKeyLanguagee";
+const String prefKeyOnBoardingScreenViewd = "OnBoardingScreenViewd";
+const String prefKeyIsUserLooggedInSuccessfully = "IsUserLooggedInSuccessfully";
 
 class AppPreferences {
   final SharedPreferences _sharedPreferences;
   AppPreferences(
     this._sharedPreferences,
   );
+
+/*   Future clear() async {
+    _sharedPreferences.remove("prefKeyLanguage");
+  } */
 
   Future<String> getAppLanguage() async {
     String? language = _sharedPreferences.getString(prefKeyLanguage);
@@ -17,5 +23,24 @@ class AppPreferences {
     } else {
       return LanguageType.ENGLISH.getValue();
     }
+  }
+
+  //on boarding
+  Future<void> setOnBoardingScreenViewd() async {
+    _sharedPreferences.setBool(prefKeyOnBoardingScreenViewd, true);
+  }
+
+  Future<bool> isOnBoardingScreenViewd() async {
+    return _sharedPreferences.getBool(prefKeyOnBoardingScreenViewd) ?? false;
+  }
+
+// User Loogged In Successfully
+  Future<void> setUserLooggedInSuccessfully() async {
+    _sharedPreferences.setBool(prefKeyIsUserLooggedInSuccessfully, true);
+  }
+
+  Future<bool> IsUserLooggedInSuccessfully() async {
+    return _sharedPreferences.getBool(prefKeyIsUserLooggedInSuccessfully) ??
+        false;
   }
 }

@@ -45,3 +45,9 @@ class Authantication {
     this.contacts,
   );
 }
+
+// forgotPassword
+class ForgotPassword {
+  String support;
+  ForgotPassword(this.support);
+}

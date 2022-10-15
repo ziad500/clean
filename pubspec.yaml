@@ -35,10 +35,13 @@ dependencies:
     sdk: flutter
   flutter_svg: ^1.1.5
   freezed: ^2.1.1
+  get_it: ^7.2.0
   internet_connection_checker: ^1.0.0+1
   json_serializable: ^6.5.0
+  lottie: ^1.4.3
   pretty_dio_logger: ^1.1.1
   retrofit: ">=3.0.0 <4.0.0"
+  rxdart: ^0.27.5
   shared_preferences: ^2.0.15
 
 dev_dependencies:
@@ -61,6 +64,10 @@ flutter:
   assets:
     - assets/images/splash_logo.png
     - assets/images/onboarding_logo1.svg
+    - assets/json/empty1.json
+    - assets/json/error1.json
+    - assets/json/loading1.json
+    - assets/json/loading.json
     - assets/images/onboarding_logo2.svg
     - assets/images/onboarding_logo3.svg
     - assets/images/onboarding_logo4.svg

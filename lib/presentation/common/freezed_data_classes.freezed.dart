@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$LoginObject {
   String get userName => throw _privateConstructorUsedError;
-  String get Password => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LoginObjectCopyWith<LoginObject> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $LoginObjectCopyWith<$Res> {
   factory $LoginObjectCopyWith(
           LoginObject value, $Res Function(LoginObject) then) =
       _$LoginObjectCopyWithImpl<$Res>;
-  $Res call({String userName, String Password});
+  $Res call({String userName, String password});
 }
 
 /// @nodoc
@@ -43,16 +43,16 @@ class _$LoginObjectCopyWithImpl<$Res> implements $LoginObjectCopyWith<$Res> {
   @override
   $Res call({
     Object? userName = freezed,
-    Object? Password = freezed,
+    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
       userName: userName == freezed
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
-      Password: Password == freezed
-          ? _value.Password
-          : Password // ignore: cast_nullable_to_non_nullable
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -65,7 +65,7 @@ abstract class _$$_LoginObjectCopyWith<$Res>
           _$_LoginObject value, $Res Function(_$_LoginObject) then) =
       __$$_LoginObjectCopyWithImpl<$Res>;
   @override
-  $Res call({String userName, String Password});
+  $Res call({String userName, String password});
 }
 
 /// @nodoc
@@ -81,16 +81,16 @@ class __$$_LoginObjectCopyWithImpl<$Res> extends _$LoginObjectCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userName = freezed,
-    Object? Password = freezed,
+    Object? password = freezed,
   }) {
     return _then(_$_LoginObject(
       userName == freezed
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
-      Password == freezed
-          ? _value.Password
-          : Password // ignore: cast_nullable_to_non_nullable
+      password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -99,16 +99,16 @@ class __$$_LoginObjectCopyWithImpl<$Res> extends _$LoginObjectCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoginObject implements _LoginObject {
-  _$_LoginObject(this.userName, this.Password);
+  _$_LoginObject(this.userName, this.password);
 
   @override
   final String userName;
   @override
-  final String Password;
+  final String password;
 
   @override
   String toString() {
-    return 'LoginObject(userName: $userName, Password: $Password)';
+    return 'LoginObject(userName: $userName, password: $password)';
   }
 
   @override
@@ -117,14 +117,14 @@ class _$_LoginObject implements _LoginObject {
         (other.runtimeType == runtimeType &&
             other is _$_LoginObject &&
             const DeepCollectionEquality().equals(other.userName, userName) &&
-            const DeepCollectionEquality().equals(other.Password, Password));
+            const DeepCollectionEquality().equals(other.password, password));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(userName),
-      const DeepCollectionEquality().hash(Password));
+      const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
@@ -133,13 +133,13 @@ class _$_LoginObject implements _LoginObject {
 }
 
 abstract class _LoginObject implements LoginObject {
-  factory _LoginObject(final String userName, final String Password) =
+  factory _LoginObject(final String userName, final String password) =
       _$_LoginObject;
 
   @override
   String get userName;
   @override
-  String get Password;
+  String get password;
   @override
   @JsonKey(ignore: true)
   _$$_LoginObjectCopyWith<_$_LoginObject> get copyWith =>

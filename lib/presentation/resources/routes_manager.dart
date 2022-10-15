@@ -1,4 +1,5 @@
-import 'package:clean/presentation/forgot_password/forgot_password_screen.dart';
+import 'package:clean/app/di.dart';
+import 'package:clean/presentation/forgot_password/view/forgot_password_screen.dart';
 import 'package:clean/presentation/login/view/login_screen.dart';
 import 'package:clean/presentation/main_screen/main_screen.dart';
 import 'package:clean/presentation/onboarding/view/onboarding_screen.dart';
@@ -31,6 +32,7 @@ class RouteGenerator {
           builder: (context) => const OnBoardingScreen(),
         );
       case Routes.loginRoutes:
+        initLoginModule();
         return MaterialPageRoute(
           builder: (context) => const LoginScreen(),
         );
@@ -39,6 +41,7 @@ class RouteGenerator {
           builder: (context) => const RegisterScreen(),
         );
       case Routes.forgotPasswordRoutes:
+        initForgotPasswordModule();
         return MaterialPageRoute(
           builder: (context) => const ForgotPasswordScreen(),
         );

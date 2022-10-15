@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:clean/domain/model/models.dart';
 import 'package:clean/presentation/base/base_view_model.dart';
 import 'package:clean/presentation/resources/assets_manager.dart';
+import 'package:flutter/material.dart';
 
+import '../../resources/routes_manager.dart';
 import '../../resources/strings_manager.dart';
 
 class OnBoardingViewModel extends BaseViewModel
@@ -28,10 +30,12 @@ class OnBoardingViewModel extends BaseViewModel
   }
 
   @override
-  int goNext() {
+  int goNext(BuildContext context) {
     int nextIndex = ++_currentPageIndex;
     if (nextIndex == _list.length) {
-      nextIndex = 0;
+      Navigator.pushReplacementNamed(context, Routes.loginRoutes);
+
+      // nextIndex = 0;
     }
     return nextIndex;
   }
@@ -80,7 +84,7 @@ class OnBoardingViewModel extends BaseViewModel
 
 //inputs mean orders that are view model will receive from view
 abstract class OnBoardingViewModelInputs {
-  int goNext();
+  int goNext(BuildContext context);
   int goPrevious();
   void onPageChanged(int index);
   //stream controller input

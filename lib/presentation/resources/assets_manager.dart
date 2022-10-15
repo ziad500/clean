@@ -1,5 +1,6 @@
 // ignore: constant_identifier_names
 const String imagePath = "assets/images";
+const String jsonPath = "assets/json";
 
 class ImageAssets {
   static const splashLogo = '$imagePath/splash_logo.png';
@@ -11,4 +12,10 @@ class ImageAssets {
   static const leftArrowIcon = '$imagePath/left_arrow_ic.svg';
   static const solidCircleIcon = '$imagePath/solid_circle_ic.svg';
   static const hollowCircleIcon = '$imagePath/hollow_cirlce_ic.svg';
+}
+
+class JsonAssets {
+  static const empty = '$jsonPath/empty1.json';
+  static const error = '$jsonPath/error1.json';
+  static const loading = '$jsonPath/loading.json';
 }

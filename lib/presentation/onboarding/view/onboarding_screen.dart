@@ -1,3 +1,5 @@
+import 'package:clean/app/app_preferences.dart';
+import 'package:clean/app/di.dart';
 import 'package:clean/presentation/onboarding/viewmodel/onboarding_viewmodel.dart';
 import 'package:clean/presentation/resources/color_manager.dart';
 import 'package:clean/presentation/resources/constants_manager.dart';
@@ -20,7 +22,10 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final PageController _pageController = PageController();
   final OnBoardingViewModel _viewModel = OnBoardingViewModel();
+  final AppPreferences _appPreferences = instance<AppPreferences>();
+
   _bind() {
+    _appPreferences.setOnBoardingScreenViewd();
     _viewModel.start();
   }
 
@@ -127,7 +132,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             padding: const EdgeInsets.all(AppPadding.p14),
             child: GestureDetector(
                 onTap: () {
-                  _pageController.animateToPage(_viewModel.goNext(),
+                  _pageController.animateToPage(_viewModel.goNext(context),
                       duration: const Duration(
                           milliseconds: AppConstants.sliderAnimationTime),
                       curve: Curves.bounceInOut);
@@ -174,35 +179,37 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        const SizedBox(
-          height: AppSize.s40,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(AppPadding.p8),
-          child: Text(
-            _sliderObject.title,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineLarge,
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: AppSize.s40,
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(AppPadding.p8),
-          child: Text(
-            _sliderObject.subTitle,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ),
-        const SizedBox(
-          height: AppSize.s60,
-        ),
-        Padding(
+          Padding(
             padding: const EdgeInsets.all(AppPadding.p8),
-            child: SvgPicture.asset(_sliderObject.image))
-      ],
+            child: Text(
+              _sliderObject.title,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(AppPadding.p8),
+            child: Text(
+              _sliderObject.subTitle,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ),
+          const SizedBox(
+            height: AppSize.s60,
+          ),
+          Padding(
+              padding: const EdgeInsets.all(AppPadding.p8),
+              child: SvgPicture.asset(_sliderObject.image))
+        ],
+      ),
     );
   }
 }

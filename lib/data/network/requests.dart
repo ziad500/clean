@@ -6,3 +6,10 @@ class LoginRequest {
     this.password,
   );
 }
+
+class ForgotPasswordRequest {
+  String email;
+  ForgotPasswordRequest(
+    this.email,
+  );
+}
