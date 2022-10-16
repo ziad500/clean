@@ -68,6 +68,7 @@ flutter:
     - assets/json/error1.json
     - assets/json/loading1.json
     - assets/json/loading.json
+    - assets/json/success.json
     - assets/images/onboarding_logo2.svg
     - assets/images/onboarding_logo3.svg
     - assets/images/onboarding_logo4.svg
