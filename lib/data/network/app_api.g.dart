@@ -90,7 +90,7 @@ class _AppServiceClient implements AppServiceClient {
       'mobileNumber': mobileNumber,
       'email': email,
       'password': password,
-      'profilePicture': profilePicture
+      'profilePicture': profilePicture,
     };
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AuthenticationResponse>(Options(
@@ -106,6 +106,29 @@ class _AppServiceClient implements AppServiceClient {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = AuthenticationResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<HomeResponse> getHome() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<HomeResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/home',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = HomeResponse.fromJson(_result.data!);
     return value;
   }
 

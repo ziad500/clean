@@ -11,4 +11,6 @@ abstract class Repository {
 
   Future<Either<Failure, Authantication>> register(
       RegisterRequest registerRequest);
+
+  Future<Either<Failure, HomeObject>> getHomeData();
 }
