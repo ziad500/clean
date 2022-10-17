@@ -3,7 +3,7 @@ import 'package:clean/presentation/forgot_password/view/forgot_password_screen.d
 import 'package:clean/presentation/login/view/login_screen.dart';
 import 'package:clean/presentation/main_screen/main_screen.dart';
 import 'package:clean/presentation/onboarding/view/onboarding_screen.dart';
-import 'package:clean/presentation/register/register_screen.dart';
+import 'package:clean/presentation/register/view/register_screen.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
 import 'package:clean/presentation/splash/splash_screen.dart';
 import 'package:clean/presentation/store_details/store_details_screen.dart';
@@ -37,6 +37,7 @@ class RouteGenerator {
           builder: (context) => const LoginScreen(),
         );
       case Routes.registerRoutes:
+        initRegisterModule();
         return MaterialPageRoute(
           builder: (context) => const RegisterScreen(),
         );

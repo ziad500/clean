@@ -28,4 +28,9 @@ class AppStrings {
   static const email = 'Email';
   static const resetPassword = 'Reset Password';
   static const didntResieveEmail = 'Didn\'t resieve email ? Resend';
+  static const userNameInvalid = "User name should be at least 8 chars";
+  static const emailInvalid = "Email format is wrong";
+  static const mobileNumberInvalid =
+      "Mobile number should be at least 10 digits";
+  static const passwordInvalid = "Passwprd should be at least 6 chars";
 }

@@ -8,8 +8,10 @@ import 'package:clean/data/response/responses.dart';
 import 'package:clean/domain/repository/repository.dart';
 import 'package:clean/domain/usecase/forgot_password_usecase.dart';
 import 'package:clean/domain/usecase/login_usecase.dart';
+import 'package:clean/domain/usecase/register_usecase.dart';
 import 'package:clean/presentation/forgot_password/viewmodel/forget_password_viewmodel.dart';
 import 'package:clean/presentation/login/viewmodel/login_viewmodel.dart';
+import 'package:clean/presentation/register/viewmodel/register_viewmodel.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
@@ -59,5 +61,15 @@ initForgotPasswordModule() {
 
     instance.registerFactory<ForgetPasswordViewModel>(
         () => ForgetPasswordViewModel(instance()));
+  }
+}
+
+initRegisterModule() {
+  if (!GetIt.I.isRegistered<RegisterUseCase>()) {
+    instance
+        .registerFactory<RegisterUseCase>(() => RegisterUseCase(instance()));
+
+    instance.registerFactory<RegisterViewModel>(
+        () => RegisterViewModel(instance()));
   }
 }

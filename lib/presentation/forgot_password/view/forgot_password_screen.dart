@@ -41,7 +41,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         appBar: AppBar(
           backgroundColor: ColorManager.white,
           elevation: AppSize.s0,
-          iconTheme: IconThemeData(color: ColorManager.black),
+          iconTheme: IconThemeData(color: ColorManager.primary),
         ),
         body: StreamBuilder<FlowState>(
             stream: _viewModel.outputState,
