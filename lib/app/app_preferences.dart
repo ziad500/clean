@@ -12,9 +12,9 @@ class AppPreferences {
     this._sharedPreferences,
   );
 
-/*   Future clear() async {
-    _sharedPreferences.remove("prefKeyLanguage");
-  } */
+  Future clear() async {
+    _sharedPreferences.setBool(prefKeyIsUserLooggedInSuccessfully, false);
+  }
 
   Future<String> getAppLanguage() async {
     String? language = _sharedPreferences.getString(prefKeyLanguage);

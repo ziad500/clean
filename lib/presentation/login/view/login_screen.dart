@@ -173,11 +173,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           )),
                       TextButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(
-                                context, Routes.registerRoutes);
+                            Navigator.pushNamed(context, Routes.registerRoutes);
                           },
                           child: Text(
-                            AppStrings.register,
+                            AppStrings.signUp,
                             style: Theme.of(context).textTheme.titleMedium,
                           ))
                     ],

@@ -90,7 +90,7 @@ class _AppServiceClient implements AppServiceClient {
       'mobileNumber': mobileNumber,
       'email': email,
       'password': password,
-      'profilePicture': profilePicture,
+      'profilePicture': profilePicture
     };
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AuthenticationResponse>(Options(

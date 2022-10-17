@@ -20,7 +20,7 @@ class AppStrings {
   static const passwordError = 'Please enter your password';
   static const login = 'Login';
   static const forgetPassword = 'Forget Password';
-  static const register = 'Not a member ? Sign up';
+  static const signUp = 'Not a member ? Sign up';
   static const loading = 'Loading...';
   static const success = 'Success';
   static const retryAgain = 'Retry again';
@@ -33,4 +33,14 @@ class AppStrings {
   static const mobileNumberInvalid =
       "Mobile number should be at least 10 digits";
   static const passwordInvalid = "Passwprd should be at least 6 chars";
+  static const register = "Register";
+  static const alreadyHaveAnAccount = "Already have an account ? Login";
+  static const mobileNumber = "Mobile number";
+  static const profilePicture = "Profile picture";
+  static const photoGallary = "Photo from gallary";
+  static const photoCamera = "Photo from camera";
+  static const home = "Home";
+  static const search = "Search";
+  static const notification = "Notification";
+  static const settings = "Settings";
 }

@@ -12,6 +12,7 @@ class ImageAssets {
   static const leftArrowIcon = '$imagePath/left_arrow_ic.svg';
   static const solidCircleIcon = '$imagePath/solid_circle_ic.svg';
   static const hollowCircleIcon = '$imagePath/hollow_cirlce_ic.svg';
+  static const photoCameraIcon = '$imagePath/photo_camera_ic.svg';
 }
 
 class JsonAssets {
