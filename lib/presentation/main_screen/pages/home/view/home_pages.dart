@@ -57,9 +57,15 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _getBannersWidget(snapshot.data?.banners),
-            _getSection(AppStrings.services),
+            if (snapshot.data?.banners != null &&
+                snapshot.data?.services != null &&
+                snapshot.data?.stores != null)
+              _getSection(AppStrings.services),
             _getServicesWidget(snapshot.data?.services),
-            _getSection(AppStrings.stores),
+            if (snapshot.data?.banners != null &&
+                snapshot.data?.services != null &&
+                snapshot.data?.stores != null)
+              _getSection(AppStrings.stores),
             _getStoresWidget(snapshot.data?.stores)
           ],
         );

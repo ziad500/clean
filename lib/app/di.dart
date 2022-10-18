@@ -19,6 +19,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../data/data_source/local_data_source.dart';
+
 final instance = GetIt.instance;
 Future<void> initAppModule() async {
 /*    app module, it's a module where we put all generic dependancies */
@@ -43,9 +45,12 @@ Future<void> initAppModule() async {
   instance.registerLazySingleton<RemoteDataSource>(
       () => RemoteDataSourceImpl(instance()));
 
+  //Local data source instance
+  instance.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
+
   //repository instance
   instance.registerLazySingleton<Repository>(
-      () => RepositoryImpl(instance(), instance()));
+      () => RepositoryImpl(instance(), instance(), instance()));
 }
 
 initLoginModule() {
