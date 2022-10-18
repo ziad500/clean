@@ -9,10 +9,12 @@ import 'package:clean/domain/usecase/forgot_password_usecase.dart';
 import 'package:clean/domain/usecase/home_usecase.dart';
 import 'package:clean/domain/usecase/login_usecase.dart';
 import 'package:clean/domain/usecase/register_usecase.dart';
+import 'package:clean/domain/usecase/store_details_usecase.dart';
 import 'package:clean/presentation/forgot_password/viewmodel/forget_password_viewmodel.dart';
 import 'package:clean/presentation/login/viewmodel/login_viewmodel.dart';
 import 'package:clean/presentation/main_screen/pages/home/viewmodel/home_viewmodel.dart';
 import 'package:clean/presentation/register/viewmodel/register_viewmodel.dart';
+import 'package:clean/presentation/store_details/viewmodel/store_details_viewmodel.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
@@ -86,5 +88,15 @@ initHomeModule() {
     instance.registerFactory<HomeUseCase>(() => HomeUseCase(instance()));
 
     instance.registerFactory<HomeViewModel>(() => HomeViewModel(instance()));
+  }
+}
+
+initStoreDetailsModule() {
+  if (!GetIt.I.isRegistered<StoreDetailsUseCase>()) {
+    instance.registerFactory<StoreDetailsUseCase>(
+        () => StoreDetailsUseCase(instance()));
+
+    instance.registerFactory<StoreDetailsViewModel>(
+        () => StoreDetailsViewModel(instance()));
   }
 }

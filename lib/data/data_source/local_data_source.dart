@@ -4,12 +4,19 @@ import 'package:clean/data/network/error_handler.dart';
 import 'package:clean/data/response/responses.dart';
 
 const CACHE_HOME_KEY = "CACHE_HOME_KEY";
+const CACHE_STORE_DETAILS_KEY = "CACHE_STORE_DETAILS_KEY";
+
 const CACHE_HOME_INTERVAL = 60 * 1000; //1 MINUTE CACHE IN MILLE
+const CACHE_STORE_DETAILS_INTERVAL = 60 * 1000; //1 MINUTE CACHE IN MILLE
 
 abstract class LocalDataSource {
   Future<HomeResponse> getHomeData();
 
   Future<void> saveHomeToCache(HomeResponse homeResponse);
+
+  Future<StoreDetailsResponse> getStoreDetailsData();
+
+  Future<void> saveStoreDetailsToCache(StoreDetailsResponse response);
 
   void clearCache();
 
@@ -44,6 +51,24 @@ class LocalDataSourceImpl implements LocalDataSource {
   @override
   void removeFromCache(String key) {
     cacheMap.remove(key);
+  }
+
+  @override
+  Future<void> saveStoreDetailsToCache(StoreDetailsResponse response) async {
+    cacheMap[CACHE_STORE_DETAILS_KEY] = CachedItem(response);
+  }
+
+  @override
+  Future<StoreDetailsResponse> getStoreDetailsData() async {
+    CachedItem? cashedItem = cacheMap[CACHE_STORE_DETAILS_KEY];
+    if (cashedItem != null &&
+        cashedItem.isValid(CACHE_STORE_DETAILS_INTERVAL)) {
+      // return the response from cache
+      return cashedItem.data;
+    } else {
+      //return an error that cache is not there or its not valid
+      throw ErrorHandler.handle(DataSource.CASHE_ERROR);
+    }
   }
 }
 
