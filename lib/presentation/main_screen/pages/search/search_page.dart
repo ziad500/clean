@@ -1,7 +1,5 @@
 import 'package:clean/presentation/resources/strings_manager.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -13,7 +11,7 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(AppStrings.search),
     );
   }

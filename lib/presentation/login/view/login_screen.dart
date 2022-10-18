@@ -1,7 +1,4 @@
 import 'package:clean/app/di.dart';
-import 'package:clean/data/repository/repository_impl.dart';
-import 'package:clean/domain/repository/repository.dart';
-import 'package:clean/domain/usecase/login_usecase.dart';
 import 'package:clean/presentation/common/state_renderer/state_rendere_impl.dart';
 import 'package:clean/presentation/login/viewmodel/login_viewmodel.dart';
 import 'package:clean/presentation/resources/assets_manager.dart';

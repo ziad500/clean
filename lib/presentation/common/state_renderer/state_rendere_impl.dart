@@ -1,7 +1,6 @@
 import 'package:clean/app/constants.dart';
 import 'package:clean/presentation/common/state_renderer/state_renderer.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 abstract class FlowState {

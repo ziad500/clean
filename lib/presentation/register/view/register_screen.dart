@@ -88,7 +88,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 _viewModel.register();
               }) ??
               _getContentWidget();
-          ;
         },
       ),
     );
@@ -143,7 +142,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             builder: (context, snapshot) {
                               return InkWell(
                                   onTap: () async {
-                                    //TODO:ASDASASD
                                     final code = await countryPicker.showPicker(
                                         context: context);
 

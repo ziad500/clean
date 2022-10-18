@@ -106,8 +106,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       return ElevatedButton(
                           onPressed: (snapshot.data ?? false)
                               ? () {
-                                  print(
-                                      '.........................${_emailController.text}');
                                   _viewModel.resetPassword();
                                 }
                               : null,

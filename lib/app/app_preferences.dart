@@ -39,7 +39,7 @@ class AppPreferences {
     _sharedPreferences.setBool(prefKeyIsUserLooggedInSuccessfully, true);
   }
 
-  Future<bool> IsUserLooggedInSuccessfully() async {
+  Future<bool> isUserLooggedInSuccessfully() async {
     return _sharedPreferences.getBool(prefKeyIsUserLooggedInSuccessfully) ??
         false;
   }

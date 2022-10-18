@@ -3,7 +3,6 @@
 import 'package:clean/data/network/app_api.dart';
 import 'package:clean/data/network/requests.dart';
 import 'package:clean/data/response/responses.dart';
-import 'package:clean/domain/model/models.dart';
 
 abstract class RemoteDataSource {
   Future<AuthenticationResponse> login(LoginRequest loginRequest);

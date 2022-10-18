@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore: depend_on_referenced_packages
 import 'package:json_annotation/json_annotation.dart';
 
 part 'responses.g.dart';
@@ -73,7 +74,7 @@ class ForgotPasswordResponse extends BaseResponse {
 @JsonSerializable()
 class ServiceResponse {
   @JsonKey(name: "id")
-  String? id;
+  int? id;
 
   @JsonKey(name: "title")
   String? title;
@@ -92,7 +93,7 @@ class ServiceResponse {
 @JsonSerializable()
 class BannersResponse {
   @JsonKey(name: "id")
-  String? id;
+  int? id;
 
   @JsonKey(name: "link")
   String? link;
@@ -114,7 +115,7 @@ class BannersResponse {
 @JsonSerializable()
 class StoreResponse {
   @JsonKey(name: "id")
-  String? id;
+  int? id;
 
   @JsonKey(name: "title")
   String? title;

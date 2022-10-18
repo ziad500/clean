@@ -1,11 +1,10 @@
-import 'package:clean/presentation/main_screen/pages/home_pages.dart';
-import 'package:clean/presentation/main_screen/pages/notification_page.dart';
-import 'package:clean/presentation/main_screen/pages/search_page.dart';
-import 'package:clean/presentation/main_screen/pages/settings_page.dart';
+import 'package:clean/presentation/main_screen/pages/home/view/home_pages.dart';
+import 'package:clean/presentation/main_screen/pages/notification/notification_page.dart';
+import 'package:clean/presentation/main_screen/pages/search/search_page.dart';
+import 'package:clean/presentation/main_screen/pages/settings/settings_page.dart';
 import 'package:clean/presentation/resources/color_manager.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
 import 'package:clean/presentation/resources/values_manager.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:math';
 
 import 'package:clean/app/functions.dart';
 import 'package:clean/domain/usecase/register_usecase.dart';
@@ -9,7 +8,6 @@ import 'package:clean/presentation/common/freezed_data_classes.dart';
 import 'package:clean/presentation/common/state_renderer/state_rendere_impl.dart';
 import 'package:clean/presentation/common/state_renderer/state_renderer.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
-import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 
 class RegisterViewModel extends BaseViewModel
     with RegisterViewModelInputs, RegisterViewModelOutputs {

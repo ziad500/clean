@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:clean/app/functions.dart';
-import 'package:clean/data/response/responses.dart';
-import 'package:clean/domain/model/models.dart';
 import 'package:clean/domain/usecase/forgot_password_usecase.dart';
 import 'package:clean/presentation/base/base_view_model.dart';
 

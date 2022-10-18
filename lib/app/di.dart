@@ -4,16 +4,16 @@ import 'package:clean/data/network/app_api.dart';
 import 'package:clean/data/network/dio_factory.dart';
 import 'package:clean/data/network/network_info.dart';
 import 'package:clean/data/repository/repository_impl.dart';
-import 'package:clean/data/response/responses.dart';
 import 'package:clean/domain/repository/repository.dart';
 import 'package:clean/domain/usecase/forgot_password_usecase.dart';
+import 'package:clean/domain/usecase/home_usecase.dart';
 import 'package:clean/domain/usecase/login_usecase.dart';
 import 'package:clean/domain/usecase/register_usecase.dart';
 import 'package:clean/presentation/forgot_password/viewmodel/forget_password_viewmodel.dart';
 import 'package:clean/presentation/login/viewmodel/login_viewmodel.dart';
+import 'package:clean/presentation/main_screen/pages/home/viewmodel/home_viewmodel.dart';
 import 'package:clean/presentation/register/viewmodel/register_viewmodel.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -73,5 +73,13 @@ initRegisterModule() {
     instance.registerFactory<RegisterViewModel>(
         () => RegisterViewModel(instance()));
     instance.registerFactory<ImagePicker>(() => ImagePicker());
+  }
+}
+
+initHomeModule() {
+  if (!GetIt.I.isRegistered<HomeUseCase>()) {
+    instance.registerFactory<HomeUseCase>(() => HomeUseCase(instance()));
+
+    instance.registerFactory<HomeViewModel>(() => HomeViewModel(instance()));
   }
 }

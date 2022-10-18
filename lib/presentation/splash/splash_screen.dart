@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _goNext() async {
-    _appPreferences.IsUserLooggedInSuccessfully().then((isUserLooggedIn) {
+    _appPreferences.isUserLooggedInSuccessfully().then((isUserLooggedIn) {
       if (isUserLooggedIn) {
         Navigator.pushReplacementNamed(context, Routes.mainRoutes);
       } else {

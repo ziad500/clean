@@ -54,14 +54,14 @@ class ForgotPassword {
 
 //home page
 class Service {
-  String id;
+  int id;
   String title;
   String image;
   Service(this.id, this.title, this.image);
 }
 
 class Banners {
-  String id;
+  int id;
   String link;
   String title;
   String image;
@@ -69,7 +69,7 @@ class Banners {
 }
 
 class Stores {
-  String id;
+  int id;
   String title;
   String image;
   Stores(this.id, this.title, this.image);
@@ -86,6 +86,6 @@ class HomeData {
 }
 
 class HomeObject {
-  HomeData? data;
+  HomeData data;
   HomeObject(this.data);
 }
