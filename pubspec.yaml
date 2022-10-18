@@ -32,9 +32,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^4.0.6
+  easy_localization: ^3.0.1
   fl_country_code_picker: ^0.0.3+1
   flutter:
     sdk: flutter
+  flutter_phoenix: ^1.1.0
   flutter_svg: ^1.1.5
   freezed: ^2.1.1
   get_it: ^7.2.0
@@ -75,10 +77,17 @@ flutter:
     - assets/images/onboarding_logo2.svg
     - assets/images/onboarding_logo3.svg
     - assets/images/onboarding_logo4.svg
+    - assets/images/change_lang_ic.svg
+    - assets/images/contact_us_ic.svg
+    - assets/images/invite_friends_ic.svg
+    - assets/images/logout_ic.svg
+    - assets/images/settings_right_arrow_ic.svg
     - assets/images/right_arrow_ic.svg
     - assets/images/left_arrow_ic.svg
     - assets/images/solid_circle_ic.svg
     - assets/images/photo_camera_ic.svg
+    - assets/translations/ar-SA.json
+    - assets/translations/en-US.json
     #- assets/images/1.5x
 
   # An image asset can refer to one or more resolution-specific "variants", see

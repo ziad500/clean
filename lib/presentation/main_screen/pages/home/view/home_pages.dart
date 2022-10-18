@@ -8,6 +8,7 @@ import 'package:clean/presentation/resources/color_manager.dart';
 import 'package:clean/presentation/resources/routes_manager.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
 import 'package:clean/presentation/resources/values_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../app/di.dart';
@@ -60,12 +61,12 @@ class _HomePageState extends State<HomePage> {
             if (snapshot.data?.banners != null &&
                 snapshot.data?.services != null &&
                 snapshot.data?.stores != null)
-              _getSection(AppStrings.services),
+              _getSection(AppStrings.services.tr()),
             _getServicesWidget(snapshot.data?.services),
             if (snapshot.data?.banners != null &&
                 snapshot.data?.services != null &&
                 snapshot.data?.stores != null)
-              _getSection(AppStrings.stores),
+              _getSection(AppStrings.stores.tr()),
             _getStoresWidget(snapshot.data?.stores)
           ],
         );

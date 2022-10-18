@@ -6,6 +6,7 @@ import 'package:clean/presentation/resources/constants_manager.dart';
 import 'package:clean/presentation/resources/routes_manager.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
 import 'package:clean/presentation/resources/values_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -75,7 +76,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   child: Text(
-                    AppStrings.skip,
+                    AppStrings.skip.tr(),
                     textAlign: TextAlign.end,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),

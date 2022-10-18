@@ -1,50 +1,69 @@
 class AppStrings {
-  static const noRouteFound = 'No Route Found';
-  static const onBoardingTitle1 = 'See The Best Course #1';
-  static const onBoardingTitle2 = 'See The Best Course #2';
-  static const onBoardingTitle3 = 'See The Best Course #3';
-  static const onBoardingTitle4 = 'See The Best Course #4';
+  static const noRouteFound = "noRouteFound";
+  static const onBoardingTitle1 = "on_boarding_title1";
+  static const onBoardingTitle2 = "on_boarding_title2";
+  static const onBoardingTitle3 = "on_boarding_title3";
+  static const onBoardingTitle4 = "on_boarding_title4";
 
-  static const onBoardingSubTitle1 =
-      'Tut app is an awesome f;utter application using clean architecture #1';
-  static const onBoardingSubTitle2 =
-      'Tut app is an awesome f;utter application using clean architecture #2';
-  static const onBoardingSubTitle3 =
-      'Tut app is an awesome f;utter application using clean architecture #3';
-  static const onBoardingSubTitle4 =
-      'Tut app is an awesome f;utter application using clean architecture #4';
-  static const skip = 'Skip';
-  static const userName = 'Username';
-  static const userNameError = 'Please enter your userName';
-  static const password = 'Password';
-  static const passwordError = 'Please enter your password';
-  static const login = 'Login';
-  static const forgetPassword = 'Forget Password';
-  static const signUp = 'Not a member ? Sign up';
-  static const loading = 'Loading...';
-  static const success = 'Success';
-  static const retryAgain = 'Retry again';
-  static const ok = 'Ok';
-  static const email = 'Email';
-  static const resetPassword = 'Reset Password';
+  static const onBoardingSubTitle1 = "on_boarding_desc1";
+  static const onBoardingSubTitle2 = "on_boarding_desc2";
+  static const onBoardingSubTitle3 = "on_boarding_desc3";
+  static const onBoardingSubTitle4 = "on_boarding_desc4";
+  static const skip = "skip";
+  static const userName = "username_hint";
+  static const password = "password_hint";
+
+/*   static const usernameError = "username_error";
+ */
+  static const passwordError = "password_error";
+  static const login = "login_button";
+  static const forgetPassword = "forgot_password_text";
+  static const registerText = "register_text";
+  static const loading = "loading";
+  static const retryAgain = "retry_again";
+  static const ok = "ok";
+  static const String email = 'email_hint';
+  static const String emailInvalid = "email_error";
+  static const String resetPassword = "reset_password";
+  static const String success = "success";
+  static const String userNameError = "username_error";
+  static const String mobileNumberInvalid = "mobile_number_hint_message";
+  static const String passwordInvalid = "password_hint_message";
+  static const String alreadyHaveAnAccount = "already_have_account";
+  static const register = "register";
+  static const mobileNumber = "mobile_number_hint";
+  static const profilePicture = "upload_profile_picture";
+  static const photoGallary = "photo_from_galley";
+  static const photoCamera = "photo_from_camera";
+  static const home = "home";
+  static const notification = "notification";
+  static const search = "search";
+  static const settings = "settings";
+  static const services = "services";
+  static const stores = "stores";
+  static const String details = "details";
+  static const String aboutStore = "about";
+  static const String storeDetails = "store_details";
+  static const String changeLanguage = "change_language";
+  static const String contactUs = "contact_us";
+  static const String inviteYOurFriends = "invite_your_friends";
+  static const String logout = "logout";
+
+  ////////////
+
   static const didntResieveEmail = 'Didn\'t resieve email ? Resend';
-  static const userNameInvalid = "User name should be at least 8 chars";
-  static const emailInvalid = "Email format is wrong";
-  static const mobileNumberInvalid =
-      "Mobile number should be at least 10 digits";
-  static const passwordInvalid = "Passwprd should be at least 6 chars";
-  static const register = "Register";
-  static const alreadyHaveAnAccount = "Already have an account ? Login";
-  static const mobileNumber = "Mobile number";
-  static const profilePicture = "Profile picture";
-  static const photoGallary = "Photo from gallary";
-  static const photoCamera = "Photo from camera";
-  static const home = "Home";
-  static const search = "Search";
-  static const notification = "Notification";
-  static const settings = "Settings";
-  static const stores = "Stores";
-  static const services = "Services";
-  static const details = "Details";
-  static const aboutStore = "About Store";
+
+  //error handler
+  static const String badRequestError = "bad_request_error";
+  static const String noContent = "no_content";
+  static const String forbiddenError = "forbidden_error";
+  static const String unauthorizedError = "unauthorized_error";
+  static const String notFoundError = "not_found_error";
+  static const String conflictError = "conflict_error";
+  static const String internalServerError = "internal_server_error";
+  static const String unknownError = "unknown_error";
+  static const String timeoutError = "timeout_error";
+  static const String defaultError = "default_error";
+  static const String cacheError = "cache_error";
+  static const String noInternetError = "no_internet_error";
 }

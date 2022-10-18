@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:clean/presentation/resources/language_manager.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const String prefKeyLanguage = "prefKeyLanguagee";
@@ -25,6 +26,28 @@ class AppPreferences {
     }
   }
 
+  Future<void> changeAppLanguage() async {
+    String currentLanguage = await getAppLanguage();
+    if (currentLanguage == LanguageType.ENGLISH.getValue()) {
+      //set arabic
+      _sharedPreferences.setString(
+          prefKeyLanguage, LanguageType.ARABIC.getValue());
+    } else {
+      //set english
+      _sharedPreferences.setString(
+          prefKeyLanguage, LanguageType.ENGLISH.getValue());
+    }
+  }
+
+  Future<Locale> getLocal() async {
+    String currentLanguage = await getAppLanguage();
+    if (currentLanguage == LanguageType.ENGLISH.getValue()) {
+      return ENGLISH_LOCAL;
+    } else {
+      return ARABIC_LOCAL;
+    }
+  }
+
   //on boarding
   Future<void> setOnBoardingScreenViewd() async {
     _sharedPreferences.setBool(prefKeyOnBoardingScreenViewd, true);
@@ -42,5 +65,9 @@ class AppPreferences {
   Future<bool> isUserLooggedInSuccessfully() async {
     return _sharedPreferences.getBool(prefKeyIsUserLooggedInSuccessfully) ??
         false;
+  }
+
+  Future<void> logout() async {
+    _sharedPreferences.remove(prefKeyIsUserLooggedInSuccessfully);
   }
 }

@@ -6,6 +6,7 @@ import 'package:clean/presentation/resources/color_manager.dart';
 import 'package:clean/presentation/resources/routes_manager.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
 import 'package:clean/presentation/resources/values_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -91,8 +92,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _userNameController,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        hintText: AppStrings.userName,
-                        labelText: AppStrings.userName,
+                        hintText: AppStrings.userName.tr(),
+                        labelText: AppStrings.userName.tr(),
                         errorText: (snapshot.data ?? true)
                             ? null
                             : AppStrings.userNameError),
@@ -115,11 +116,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _passwordController,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                        hintText: AppStrings.password,
-                        labelText: AppStrings.password,
+                        hintText: AppStrings.password.tr(),
+                        labelText: AppStrings.password.tr(),
                         errorText: (snapshot.data ?? true)
                             ? null
-                            : AppStrings.passwordError),
+                            : AppStrings.passwordError.tr()),
                   );
                 },
               ),
@@ -144,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 _viewModel.login();
                               }
                             : null,
-                        child: const Text(AppStrings.login)),
+                        child: Text(AppStrings.login.tr())),
                   );
                 },
               ),
@@ -165,7 +166,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 context, Routes.forgotPasswordRoutes);
                           },
                           child: Text(
-                            AppStrings.forgetPassword,
+                            AppStrings.forgetPassword.tr(),
                             style: Theme.of(context).textTheme.titleMedium,
                           )),
                       TextButton(
@@ -173,7 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.pushNamed(context, Routes.registerRoutes);
                           },
                           child: Text(
-                            AppStrings.signUp,
+                            AppStrings.registerText.tr(),
                             style: Theme.of(context).textTheme.titleMedium,
                           ))
                     ],

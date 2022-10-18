@@ -7,6 +7,7 @@ import 'package:clean/presentation/resources/font_manager.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
 import 'package:clean/presentation/resources/styles_manager.dart';
 import 'package:clean/presentation/resources/values_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -51,13 +52,13 @@ class StateRenderer extends StatelessWidget {
           _getAnimatedImage(JsonAssets.success),
           _getMessage(title),
           _getMessage(message),
-          _getRetryButton(AppStrings.ok, context)
+          _getRetryButton(AppStrings.ok.tr(), context)
         ]);
       case StateRendererType.POPUP_ERROR_STATE:
         return _getPopUpDialog(context, [
           _getAnimatedImage(JsonAssets.error),
           _getMessage(message),
-          _getRetryButton(AppStrings.ok, context)
+          _getRetryButton(AppStrings.ok.tr(), context)
         ]);
       case StateRendererType.FULL_SCREEN_LOADING_STATE:
         return _getItemsColumn(
@@ -66,7 +67,7 @@ class StateRenderer extends StatelessWidget {
         return _getItemsColumn([
           _getAnimatedImage(JsonAssets.error),
           _getMessage(message),
-          _getRetryButton(AppStrings.retryAgain, context)
+          _getRetryButton(AppStrings.retryAgain.tr(), context)
         ]);
       case StateRendererType.FULL_SCREEN_EMPTY_STATE:
         return _getItemsColumn(

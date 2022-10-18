@@ -8,6 +8,7 @@ import 'package:clean/presentation/common/freezed_data_classes.dart';
 import 'package:clean/presentation/common/state_renderer/state_rendere_impl.dart';
 import 'package:clean/presentation/common/state_renderer/state_renderer.dart';
 import 'package:clean/presentation/resources/strings_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class RegisterViewModel extends BaseViewModel
     with RegisterViewModelInputs, RegisterViewModelOutputs {
@@ -186,15 +187,15 @@ class RegisterViewModel extends BaseViewModel
 
   @override
   Stream<String?> get outputErrorUserName => outputIsUserNameValid
-      .map((isUserName) => isUserName ? null : AppStrings.userNameInvalid);
+      .map((isUserName) => isUserName ? null : AppStrings.userNameError.tr());
 
   @override
   Stream<bool> get outputIsEmailValid =>
       _emailStreamController.stream.map((email) => isEmailValid(email));
 
   @override
-  Stream<String?> get outputErrorEmail => outputIsEmailValid
-      .map((isEmailValid) => isEmailValid ? null : AppStrings.emailInvalid);
+  Stream<String?> get outputErrorEmail => outputIsEmailValid.map(
+      (isEmailValid) => isEmailValid ? null : AppStrings.emailInvalid.tr());
 
   @override
   Stream<bool> get outputIsMobileNumberValid =>
@@ -204,15 +205,16 @@ class RegisterViewModel extends BaseViewModel
   @override
   Stream<String?> get outputErrorMobileNumber =>
       outputIsMobileNumberValid.map((isMobileNumberValid) =>
-          isMobileNumberValid ? null : AppStrings.mobileNumberInvalid);
+          isMobileNumberValid ? null : AppStrings.mobileNumberInvalid.tr());
 
   @override
   Stream<bool> get outputIsPasswordValid => _passwordStreamController.stream
       .map((password) => _isPasswordValid(password));
 
   @override
-  Stream<String?> get outputErrorPassword => outputIsPasswordValid.map(
-      (isPasswordValid) => isPasswordValid ? null : AppStrings.passwordInvalid);
+  Stream<String?> get outputErrorPassword =>
+      outputIsPasswordValid.map((isPasswordValid) =>
+          isPasswordValid ? null : AppStrings.passwordInvalid.tr());
 
   @override
   Stream<File> get outputProfilePicture =>

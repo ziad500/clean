@@ -5,6 +5,7 @@ import 'package:clean/presentation/common/state_renderer/state_rendere_impl.dart
 import 'package:clean/presentation/register/viewmodel/register_viewmodel.dart';
 import 'package:clean/presentation/resources/color_manager.dart';
 import 'package:clean/presentation/resources/values_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
@@ -118,8 +119,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     controller: _userNameController,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        hintText: AppStrings.userName,
-                        labelText: AppStrings.userName,
+                        hintText: AppStrings.userName.tr(),
+                        labelText: AppStrings.userName.tr(),
                         errorText: snapshot.data),
                   );
                 },
@@ -174,8 +175,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               controller: _mobileNumberController,
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
-                                  hintText: AppStrings.mobileNumber,
-                                  labelText: AppStrings.mobileNumber,
+                                  hintText: AppStrings.mobileNumber.tr(),
+                                  labelText: AppStrings.mobileNumber.tr(),
                                   errorText: snapshot.data),
                             );
                           },
@@ -197,8 +198,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        hintText: AppStrings.email,
-                        labelText: AppStrings.email,
+                        hintText: AppStrings.email.tr(),
+                        labelText: AppStrings.email.tr(),
                         errorText: snapshot.data),
                   );
                 },
@@ -219,8 +220,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     controller: _passwordController,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
-                        hintText: AppStrings.password,
-                        labelText: AppStrings.password,
+                        hintText: AppStrings.password.tr(),
+                        labelText: AppStrings.password.tr(),
                         errorText: snapshot.data),
                   );
                 },
@@ -267,7 +268,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 _viewModel.register();
                               }
                             : null,
-                        child: const Text(AppStrings.register)),
+                        child: Text(AppStrings.register.tr())),
                   );
                 },
               ),
@@ -285,7 +286,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             .pushReplacementNamed(Routes.loginRoutes);
                       },
                       child: Text(
-                        AppStrings.alreadyHaveAnAccount,
+                        AppStrings.alreadyHaveAnAccount.tr(),
                         style: Theme.of(context).textTheme.titleMedium,
                       )),
                 )),
@@ -305,7 +306,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ListTile(
               trailing: const Icon(Icons.arrow_forward),
               leading: const Icon(Icons.image),
-              title: const Text(AppStrings.photoGallary),
+              title: Text(AppStrings.photoGallary.tr()),
               onTap: () {
                 _imageFromGallary();
                 Navigator.of(context).pop();
@@ -314,7 +315,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ListTile(
               trailing: const Icon(Icons.arrow_forward),
               leading: const Icon(Icons.camera_alt),
-              title: const Text(AppStrings.photoCamera),
+              title: Text(AppStrings.photoCamera.tr()),
               onTap: () {
                 _imageFromCamera();
                 Navigator.of(context).pop();
@@ -342,7 +343,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Flexible(child: Text(AppStrings.profilePicture)),
+          Flexible(child: Text(AppStrings.profilePicture.tr())),
           Flexible(
               child: StreamBuilder<File>(
             stream: _viewModel.outputProfilePicture,

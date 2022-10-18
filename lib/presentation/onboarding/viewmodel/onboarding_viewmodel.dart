@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:clean/domain/model/models.dart';
 import 'package:clean/presentation/base/base_view_model.dart';
 import 'package:clean/presentation/resources/assets_manager.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../resources/routes_manager.dart';
@@ -66,14 +67,22 @@ class OnBoardingViewModel extends BaseViewModel
 
   // OnBoarding Private Function
   List<SliderObject> _getSliderData() => [
-        SliderObject(ImageAssets.onBoardingLogo1,
-            AppStrings.onBoardingSubTitle1, AppStrings.onBoardingTitle1),
-        SliderObject(ImageAssets.onBoardingLogo2,
-            AppStrings.onBoardingSubTitle2, AppStrings.onBoardingTitle2),
-        SliderObject(ImageAssets.onBoardingLogo3,
-            AppStrings.onBoardingSubTitle3, AppStrings.onBoardingTitle3),
-        SliderObject(ImageAssets.onBoardingLogo4,
-            AppStrings.onBoardingSubTitle4, AppStrings.onBoardingTitle4)
+        SliderObject(
+            ImageAssets.onBoardingLogo1,
+            AppStrings.onBoardingSubTitle1.tr(),
+            AppStrings.onBoardingTitle1.tr()),
+        SliderObject(
+            ImageAssets.onBoardingLogo2,
+            AppStrings.onBoardingSubTitle2.tr(),
+            AppStrings.onBoardingTitle2.tr()),
+        SliderObject(
+            ImageAssets.onBoardingLogo3,
+            AppStrings.onBoardingSubTitle3.tr(),
+            AppStrings.onBoardingTitle3.tr()),
+        SliderObject(
+            ImageAssets.onBoardingLogo4,
+            AppStrings.onBoardingSubTitle4.tr(),
+            AppStrings.onBoardingTitle4.tr())
       ];
 
   void _postDataToView() {

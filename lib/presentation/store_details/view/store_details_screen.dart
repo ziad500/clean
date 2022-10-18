@@ -1,5 +1,6 @@
 import 'package:clean/domain/model/models.dart';
 import 'package:clean/presentation/store_details/viewmodel/store_details_viewmodel.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../app/di.dart';
 import '../../common/state_renderer/state_rendere_impl.dart';
@@ -65,11 +66,11 @@ class _StoreDetailsScreenState extends State<StoreDetailsScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _getImage(storeDetails.image),
-          _getSection(AppStrings.details),
+          _getSection(AppStrings.storeDetails.tr()),
           _getArticle(storeDetails.details),
-          _getSection(AppStrings.services),
+          _getSection(AppStrings.services.tr()),
           _getArticle(storeDetails.services),
-          _getSection(AppStrings.aboutStore),
+          _getSection(AppStrings.aboutStore.tr()),
           _getArticle(storeDetails.about)
         ],
       );
